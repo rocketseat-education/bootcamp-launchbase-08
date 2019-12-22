@@ -3,14 +3,16 @@ const db = require('../../config/db')
 function find(filters, table) {
     let query = `SELECT * FROM ${table}`
 
-    Object.keys(filters).map(key => {
-        // WHERE | OR | AND
-        query += ` ${key}`
-
-        Object.keys(filters[key]).map(field => {
-            query += ` ${field} = '${filters[key][field]}'`
+    if(filters) {
+        Object.keys(filters).map(key => {
+            // WHERE | OR | AND
+            query += ` ${key}`
+    
+            Object.keys(filters[key]).map(field => {
+                query += ` ${field} = '${filters[key][field]}'`
+            })
         })
-    })
+    }
 
     return db.query(query)
 }
