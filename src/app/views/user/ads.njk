@@ -4,12 +4,12 @@
 {% block content %}
 
 
-{%call cards.render('Meus Anúncio', 'users-ads container') %}
+{%call cards.render('Meus Anúncios', 'users-ads container') %}
     <div class="items">
         {% for product in products %}
             <div class="item">
                 <div class="image"
-                    style="background-image: url({{product.img}}"
+                    style="background-image: url({{product.img}})"
                 >
                 </div>
 
@@ -17,12 +17,14 @@
                     <div class="title">{{product.name}}</div>
                     <div class="price">{{product.formattedPrice}}</div>
                     <div class="published">Publicado em {{product.formattedCreatedAt}}</div>
+
+                    <div class="actions">
+                        <a href="/products/{{product.id}}/edit">Editar</a>
+                        <a href="/products/{{product.id}}">Ver</a>
+                    </div>
                 </div>
 
-                <div class="actions">
-                    <a href="/products/{{product.id}}/edit">Editar</a>
-                    <a href="/products/{{product.id}}">Ver</a>
-                </div>
+                
 
             </div>
         {% endfor %}

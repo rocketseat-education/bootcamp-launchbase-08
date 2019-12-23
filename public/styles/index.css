@@ -1,5 +1,3 @@
-
-
 :root {
     --primary-color: #fd951f;
     --secondary-color: #1f83fd;
@@ -582,18 +580,6 @@ form .item #photos-preview img {
     font-weight: bold;
 }
 
-/* user register */
-.user-register.container.form {
-    max-width: 500px;
-}
-/* 
-.form input[name="email"],
-.form input[name="password"],
-.form input[name="passwordRepeat"],
-.form input[name="cpf_cnpj"],
-.form input[name="cep"] {
-    max-width: 60%;
-} */
 
 /* validate errors*/
 .input .error {
