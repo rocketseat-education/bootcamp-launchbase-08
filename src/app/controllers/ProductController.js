@@ -17,18 +17,6 @@ module.exports = {
     },
     async post(req, res) {
         try {
-
-            const keys = Object.keys(req.body)
-
-            for (key of keys) {
-                if (req.body[key] == "") {
-                    return res.send('Please, fill all fields!')
-                }
-            }
-
-            if (req.files.length == 0)
-                return res.send('Please, send at least one image')
-
             let { category_id, name, description, old_price,
                 price, quantity, status } = req.body
 
@@ -87,15 +75,6 @@ module.exports = {
     },
     async put(req, res) {
         try {
-
-            const keys = Object.keys(req.body)
-
-            for (key of keys) {
-                if (req.body[key] == "" && key != "removed_files") {
-                    return res.send('Please, fill all fields!')
-                }
-            }
-
 
             if (req.files.length != 0) {
                 const newFilesPromise = req.files.map(file =>
